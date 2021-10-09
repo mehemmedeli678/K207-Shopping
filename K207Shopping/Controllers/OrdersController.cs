@@ -31,7 +31,7 @@ namespace K207Shopping.Controllers
                 List<Product> products = _context.Products.Include("ProductPicture.Picture").Where(x => productIds.Contains(x.ID)).ToList();
                 return PartialView("BasketProduct", products);
             }
-            return PartialView("BasketProduct", null);
+            return PartialView("BasketProduct");
         }
         public IActionResult Checkout()
         {

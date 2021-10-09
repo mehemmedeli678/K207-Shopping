@@ -21,5 +21,7 @@ namespace K207Shopping.Models
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
         public List<ProductPicture> ProductPicture { get; set; }
+        public List<ProductColor> ProductColors { get; set; }
+        public List<ProductSize> ProductSizes { get; set; }
     }
 }

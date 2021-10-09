@@ -201,3 +201,11 @@ C:\Users\USER\source\repos\K207Shopping\K207Shopping\bin\Debug\net5.0\Microsoft.
 C:\Users\USER\source\repos\K207Shopping\K207Shopping\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\USER\source\repos\K207Shopping\K207Shopping\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\USER\source\repos\K207Shopping\K207Shopping\obj\Debug\net5.0\Razor\Views\Auth\Register.cshtml.g.cs
+C:\Users\USER\source\repos\K207Shopping\K207Shopping\obj\Debug\net5.0\Razor\Areas\K207admin\Views\Products\Create.cshtml.g.cs
+C:\Users\USER\source\repos\K207Shopping\K207Shopping\obj\Debug\net5.0\Razor\Areas\K207admin\Views\Products\Delete.cshtml.g.cs
+C:\Users\USER\source\repos\K207Shopping\K207Shopping\obj\Debug\net5.0\Razor\Areas\K207admin\Views\Products\Details.cshtml.g.cs
+C:\Users\USER\source\repos\K207Shopping\K207Shopping\obj\Debug\net5.0\Razor\Areas\K207admin\Views\Products\Edit.cshtml.g.cs
+C:\Users\USER\source\repos\K207Shopping\K207Shopping\obj\Debug\net5.0\Razor\Areas\K207admin\Views\Products\Index.cshtml.g.cs
+C:\Users\USER\source\repos\K207Shopping\K207Shopping\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\USER\source\repos\K207Shopping\K207Shopping\bin\Debug\net5.0\itextsharp.dll
+C:\Users\USER\source\repos\K207Shopping\K207Shopping\bin\Debug\net5.0\itextsharp.xmlworker.dll

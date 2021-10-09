@@ -1,0 +1,123 @@
+﻿@model CreateVM
+
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="ProductCreate">
+            <input name="sizeIds" id="sizeIds" type="hidden" />
+            <input name="colorIds" id="colorIds" type="hidden" />
+
+            <div class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input id="Name" name="Name" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Detail</label>
+                <input id="Detail" name="Detail" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Price</label>
+                <input id="Price" name="Price" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Discount</label>
+                <input id="Discount" name="Discount" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Stock</label>
+                <input id="Stock" name="Stock" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Category</label>
+                <select id="CategoryID" name="CategoryID" class="form-control">
+                    @foreach (var item in Model.categories)
+                    {
+                        <option value="@item.ID">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Size</label>
+                <ul>
+                    @foreach (var item in Model.sizes)
+                    {
+                    <li>
+                        <p value="@item.ID" class="SizeID">@item.SizeName</p>
+                        <input class="inpID btn btn-danger" type="number" id="quantity" value="0" name="quantity" min="0" max="" />
+                    </li>
+                    }
+                </ul>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Picture</label>
+                <input id="photo" type="file" multiple />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Color</label>
+                <ul>
+                    @foreach (var item in Model.Colors)
+                    {
+                        <li>
+                            <p value="@item.ID" class="ColorID">@item.ColorName</p>
+                            <input class="inpID btn btn-danger" type="number" id="quantity" value="0" name="quantity" min="0" max="" />
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="prod btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<h5 style="display:none;" class="errormessage"></h5>
+@section Scripts{ 
+<script>
+    $("#ProductCreate").on("submit", function (e) {
+        let sizeIds = [];
+        let colorIds = []
+        e.preventDefault()
+        $(".SizeID").each((i, elem) => {
+            const sizeId = $(elem).attr("value");
+            const quantity = Number($(elem).next().val());
+            if (quantity != 0 && quantity != null) {
+                sizeIds.push(sizeId + "-" + quantity);
+            }
+        })
+        $(".ColorID").each((i, col) => {
+            const colorID = $(col).attr("value");
+            const quantity = Number($(col).next().val());
+            if (quantity != 0 && quantity != null) {
+                colorIds.push(colorID + "-" + quantity);
+            }
+        })
+        //formun əvvəlində qeyd olunub bu inputlar
+        $("#sizeIds").val(sizeIds)
+        $("#colorIds").val(colorIds)
+        $.ajax({
+            url: "/k207admin/products/create",
+            method: "post",
+            data: $("#ProductCreate").serialize(),
+            success: function (res) {
+                console.log(res.value)
+                $(".errormessage").show()
+                $(".errormessage").text(res.value.message)
+            }
+        })
+    })
+</script>
+}

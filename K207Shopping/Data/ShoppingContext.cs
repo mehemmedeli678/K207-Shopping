@@ -20,6 +20,13 @@ namespace K207Shopping.Data
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<ProductPicture> ProductPictures { get; set; }
         public DbSet<k207User> k207Users { get; set; }
+        public DbSet<ProductColor> ProductColor { get; set; }
+        public DbSet<Color> Color { get; set; }
+        public DbSet<ProductSize> ProductSize { get; set; }
+        public DbSet<Size> Size { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderItem> OrderItem { get; set; }
+        public DbSet<OrderHistory> OrderHistorie { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
